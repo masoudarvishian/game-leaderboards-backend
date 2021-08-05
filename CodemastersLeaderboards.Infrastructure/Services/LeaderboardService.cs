@@ -37,14 +37,17 @@ namespace CodemastersLeaderboards.Infrastructure.Services
             }
 
             var query = await all
-                .Include(x => x.User)
-                .Include(x => x.Country)
-                .Include(x => x.Platform)
-                .Include(x => x.Vehicle)
+                
                 // pagination
                 .OrderBy(on => on.Time)
                 .Skip((pagination.PageNumber - 1) * pagination.PageSize)
                 .Take(pagination.PageSize)
+
+                .Include(x => x.User)
+                .Include(x => x.Country)
+                .Include(x => x.Platform)
+                .Include(x => x.Vehicle)
+
                 .ToListAsync();
 
             // we can use automapper to map to dto model, but for simplicity we map it ourselves
