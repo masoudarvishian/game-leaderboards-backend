@@ -1,6 +1,8 @@
 using CodemastersLeaderboards.API.Extensions;
+using CodemastersLeaderboards.Application.Services;
 using CodemastersLeaderboards.Application.Services.DomainService;
 using CodemastersLeaderboards.Infrastructure;
+using CodemastersLeaderboards.Infrastructure.Services;
 using CodemastersLeaderboards.Infrastructure.Services.DomainService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -54,11 +56,32 @@ namespace CodemastersLeaderboards.API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CodemastersLeaderboards.API", Version = "v1" });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Please insert JWT with Bearer into field",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] { }
+                    }
+                });
             });
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IPlatformService, PlatformService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
