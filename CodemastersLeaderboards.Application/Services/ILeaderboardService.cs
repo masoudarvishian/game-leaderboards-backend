@@ -7,6 +7,6 @@ namespace CodemastersLeaderboards.Application.Services
 {
     public interface ILeaderboardService
     {
-        IEnumerable<LeaderboardDto> GetAll();
+        IEnumerable<LeaderboardDto> GetAll(PaginationDto pagination);
     }
 }

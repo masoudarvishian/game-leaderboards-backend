@@ -20,9 +20,9 @@ namespace CodemastersLeaderboards.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<LeaderboardDto>> Get()
+        public ActionResult<IEnumerable<LeaderboardDto>> Get([FromQuery] PaginationDto pagination)
         {
-            var all = _leaderboardService.GetAll();
+            var all = _leaderboardService.GetAll(pagination);
 
             return Ok(all);
         }

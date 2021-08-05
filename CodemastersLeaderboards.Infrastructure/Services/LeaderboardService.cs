@@ -18,19 +18,38 @@ namespace CodemastersLeaderboards.Infrastructure.Services
             _unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<LeaderboardDto> GetAll()
+        public IEnumerable<LeaderboardDto> GetAll(PaginationDto pagination)
         {
-            var all = _unitOfWork.Repository<Leaderboard>().FindAll()
+            var all = _unitOfWork.Repository<Leaderboard>().FindAll();
+
+            // filter by race
+            if (pagination.RaceId != -1)
+            {
+                all = all.Where(x => x.RaceId == pagination.RaceId);
+            }
+
+            // filter by platform
+            if (pagination.PlatformId != -1)
+            {
+                all = all.Where(x => x.PlatformId == pagination.PlatformId);
+            }
+
+            var query = all
                 .Include(x => x.User)
                 .Include(x => x.Country)
                 .Include(x => x.Platform)
-                .Include(x => x.Vehicle);
+                .Include(x => x.Vehicle)
+                // pagination
+                .OrderBy(on => on.Time)
+                .Skip((pagination.PageNumber - 1) * pagination.PageSize)
+                .Take(pagination.PageSize)
+                .ToList();
 
             // we can use automapper to map to dto model, but for simplicity we map it ourselves
 
             var dtos = new List<LeaderboardDto>();
 
-            foreach (var item in all)
+            foreach (var item in query)
             {
                 var time = TimeSpan.FromMilliseconds(item.Time);
 

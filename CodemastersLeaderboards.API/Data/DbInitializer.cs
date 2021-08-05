@@ -158,7 +158,7 @@ namespace CodemastersLeaderboards.API.Data
 
                 var random = new Random();
                 
-                for (int i = 0; i < 200; i++)
+                for (int i = 0; i < 1000; i++)
                 {
                     while(true)
                     {
