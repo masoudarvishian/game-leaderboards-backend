@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace CodemastersLeaderboards.API.Controllers
 {
@@ -20,11 +22,41 @@ namespace CodemastersLeaderboards.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<LeaderboardDto>> Get([FromQuery] PaginationDto pagination)
+        public async Task<ActionResult<IEnumerable<LeaderboardOutputDto>>> Get([FromQuery] PaginationDto pagination)
         {
-            var all = _leaderboardService.GetAll(pagination);
+            var all = await _leaderboardService.GetAll(pagination);
 
             return Ok(all);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(LeaderboardInputDto inputDto)
+        {
+            try
+            {
+                var userId = int.Parse(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                await _leaderboardService.AddToLeaderboard(inputDto, userId);
+                return Ok();
+            }
+            catch (System.Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Put(LeaderboardUpdateDto updateDto)
+        {
+            try
+            {
+                var userId = int.Parse(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                await _leaderboardService.UpdateLeaderboardItem(updateDto, userId);
+                return Ok();
+            }
+            catch (System.Exception)
+            {
+                return BadRequest();
+            }
         }
     }
 }

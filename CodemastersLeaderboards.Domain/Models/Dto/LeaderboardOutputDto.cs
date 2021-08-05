@@ -1,6 +1,6 @@
 ﻿namespace CodemastersLeaderboards.Domain.Models.Dto
 {
-    public class LeaderboardDto
+    public class LeaderboardOutputDto
     {
         public string Username { get; set; }
         public string Country { get; set; }
