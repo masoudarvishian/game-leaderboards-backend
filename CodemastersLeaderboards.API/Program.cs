@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Threading.Tasks;
 
 namespace CodemastersLeaderboards.API
 {
@@ -12,7 +14,7 @@ namespace CodemastersLeaderboards.API
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
-            SeedDatabase(host);
+            SeedDatabase(host).Wait();
             host.Run();
         }
 
@@ -23,7 +25,7 @@ namespace CodemastersLeaderboards.API
                     webBuilder.UseStartup<Startup>();
                 });
 
-        private static void SeedDatabase(IHost host)
+        private static async Task SeedDatabase(IHost host)
         {
             using (var scope = host.Services.CreateScope())
             {
@@ -32,9 +34,9 @@ namespace CodemastersLeaderboards.API
                 {
                     var context = services.GetRequiredService<ApplicationContext>();
 
-                    DbInitializer.Initialize(context, services);
+                    await DbInitializer.Initialize(context, services);
                 }
-                catch
+                catch (Exception exc)
                 {
                     var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError("An error occurred while seeding the database");

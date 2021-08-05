@@ -7,25 +7,22 @@ using System.Collections.Generic;
 
 namespace CodemastersLeaderboards.API.Controllers
 {
-    // we can config this controller so only admin platforms can see the list of all races, but for simplicity
-    // we imagine every logged in user can retrieve the list of platforms
-
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
     [ApiController]
-    public class PlatformController : ControllerBase
+    public class CountryController : ControllerBase
     {
-        private readonly IPlatformService _platformService;
+        private readonly ICountryService _countryService;
 
-        public PlatformController(IPlatformService platformService)
+        public CountryController(ICountryService countryService)
         {
-            _platformService = platformService;
+            _countryService = countryService;
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<PlatformDto>> Get()
+        public ActionResult<IEnumerable<CountryDto>> Get()
         {
-            var all = _platformService.GetAll();
+            var all = _countryService.GetAll();
             return Ok(all);
         }
     }

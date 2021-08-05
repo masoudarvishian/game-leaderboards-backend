@@ -82,6 +82,10 @@ namespace CodemastersLeaderboards.API
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IPlatformService, PlatformService>();
+            services.AddScoped<IVehicleService, VehicleService>();
+            services.AddScoped<ICountryService, CountryService>();
+            services.AddScoped<IRaceService, RaceService>();
+            services.AddScoped<ILeaderboardService, LeaderboardService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
