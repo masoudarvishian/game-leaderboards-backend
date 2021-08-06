@@ -46,8 +46,8 @@ namespace CodemastersLeaderboards.API
                        ValidateIssuer = true,
                        ValidateLifetime = true,
                        ValidateIssuerSigningKey = true,
-                       ValidIssuer = "localhost:57459",
-                       ValidAudience = "localhost:57459",
+                       ValidIssuer = "localhost:44386",
+                       ValidAudience = "localhost:44386",
                        IssuerSigningKey = new SymmetricSecurityKey(
                            Encoding.UTF8.GetBytes(signatureKey))
                    };

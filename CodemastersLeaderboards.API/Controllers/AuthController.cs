@@ -65,8 +65,8 @@ namespace CodemastersLeaderboards.API.Controllers
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Issuer = "localhost:57459",
-                Audience = "localhost:57459",
+                Issuer = "localhost:44386",
+                Audience = "localhost:44386",
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.Now.AddDays(1),
                 SigningCredentials = credentials

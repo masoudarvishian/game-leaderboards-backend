@@ -20,7 +20,7 @@ namespace CodemastersLeaderboards.Infrastructure.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<IEnumerable<LeaderboardOutputDto>> GetAll(PaginationDto pagination)
+        public async Task<LeaderboardOutputDto> GetAll(PaginationDto pagination)
         {
             var all = _unitOfWork.Repository<Leaderboard>().FindAll();
 
@@ -35,6 +35,8 @@ namespace CodemastersLeaderboards.Infrastructure.Services
             {
                 all = all.Where(x => x.PlatformId == pagination.PlatformId);
             }
+
+            var totalCount = await all.CountAsync();
 
             var query = await all
                 
@@ -52,23 +54,26 @@ namespace CodemastersLeaderboards.Infrastructure.Services
 
             // we can use automapper to map to dto model, but for simplicity we map it ourselves
 
-            var dtos = new List<LeaderboardOutputDto>();
+            var dto = new LeaderboardOutputDto();
+
+            dto.TotalCount = totalCount;
 
             foreach (var item in query)
             {
                 var time = TimeSpan.FromMilliseconds(item.Time);
 
-                dtos.Add(new LeaderboardOutputDto
+                dto.List.Add(new LeaderboardOutputDto.DataList
                 {
                     Username = item.User.Username,
                     Country = item.Country.Name,
                     Platform = item.Platform.Name,
                     Vehicle = item.Vehicle.Name,
-                    Time = $"{time.Hours:00}:{time.Minutes:00}:{time.Seconds:00}"
+                    Time = $"{time.Hours:00}:{time.Minutes:00}:{time.Seconds:00}",
+                    RaceId = item.RaceId
                 });
             }
 
-            return dtos;
+            return dto;
         }
 
         public async Task AddToLeaderboard(LeaderboardInputDto inputDto, int userId)

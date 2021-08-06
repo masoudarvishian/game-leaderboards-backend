@@ -6,7 +6,7 @@ namespace CodemastersLeaderboards.Application.Services
 {
     public interface ILeaderboardService
     {
-        Task<IEnumerable<LeaderboardOutputDto>> GetAll(PaginationDto pagination);
+        Task<LeaderboardOutputDto> GetAll(PaginationDto pagination);
 
         Task AddToLeaderboard(LeaderboardInputDto inputDto, int userId);
 
