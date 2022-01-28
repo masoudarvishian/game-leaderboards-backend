@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "CodemastersLeaderboards.API": {
+    "GameLeaderboards.API": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodemastersLeaderboards.API", "CodemastersLeaderboards.API\CodemastersLeaderboards.API.csproj", "{CC6C0764-3D9D-4D05-8DBD-9BB825D25500}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameLeaderboards.API", "GameLeaderboards.API\GameLeaderboards.API.csproj", "{CC6C0764-3D9D-4D05-8DBD-9BB825D25500}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodemastersLeaderboards.Application", "CodemastersLeaderboards.Application\CodemastersLeaderboards.Application.csproj", "{AADDEE3D-4159-4672-B821-BB7C2823C571}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameLeaderboards.Application", "GameLeaderboards.Application\GameLeaderboards.Application.csproj", "{AADDEE3D-4159-4672-B821-BB7C2823C571}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodemastersLeaderboards.Domain", "CodemastersLeaderboards.Domain\CodemastersLeaderboards.Domain.csproj", "{EF467C34-D880-40D8-8108-F967B8A6576E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameLeaderboards.Domain", "GameLeaderboards.Domain\GameLeaderboards.Domain.csproj", "{EF467C34-D880-40D8-8108-F967B8A6576E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodemastersLeaderboards.Infrastructure", "CodemastersLeaderboards.Infrastructure\CodemastersLeaderboards.Infrastructure.csproj", "{E146B921-4E78-4F97-A10B-F1C850CFEA12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameLeaderboards.Infrastructure", "GameLeaderboards.Infrastructure\GameLeaderboards.Infrastructure.csproj", "{E146B921-4E78-4F97-A10B-F1C850CFEA12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

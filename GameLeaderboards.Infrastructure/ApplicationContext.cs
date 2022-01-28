@@ -62,7 +62,7 @@ namespace GameLeaderboards.Infrastructure
             {
                 IConfigurationRoot configuration = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile(@Directory.GetCurrentDirectory() + "/../CodemastersLeaderboards.API/appsettings.json")
+                    .AddJsonFile(@Directory.GetCurrentDirectory() + "/../GameLeaderboards.API/appsettings.json")
                     .Build();
                 var builder = new DbContextOptionsBuilder<ApplicationContext>();
                 var connectionString = configuration.GetConnectionString("DefaultConnection");

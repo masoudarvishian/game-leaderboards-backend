@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CodemastersLeaderboards.Application\CodemastersLeaderboards.Application.csproj" />
+    <ProjectReference Include="..\GameLeaderboards.Application\GameLeaderboards.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

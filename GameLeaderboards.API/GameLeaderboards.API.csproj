@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CodemastersLeaderboards.Application\CodemastersLeaderboards.Application.csproj" />
-    <ProjectReference Include="..\CodemastersLeaderboards.Infrastructure\CodemastersLeaderboards.Infrastructure.csproj" />
+    <ProjectReference Include="..\GameLeaderboards.Application\GameLeaderboards.Application.csproj" />
+    <ProjectReference Include="..\GameLeaderboards.Infrastructure\GameLeaderboards.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

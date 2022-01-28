@@ -4,16 +4,14 @@ using GameLeaderboards.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GameLeaderboards.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20210805131428_AddLeaderboard")]
-    partial class AddLeaderboard
+    partial class ApplicationContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +19,7 @@ namespace GameLeaderboards.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("CodemastersLeaderboards.Domain.Models.Country", b =>
+            modelBuilder.Entity("GameLeaderboards.Domain.Models.Country", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -37,7 +35,7 @@ namespace GameLeaderboards.Infrastructure.Migrations
                     b.ToTable("Countries");
                 });
 
-            modelBuilder.Entity("CodemastersLeaderboards.Domain.Models.Leaderboard", b =>
+            modelBuilder.Entity("GameLeaderboards.Domain.Models.Leaderboard", b =>
                 {
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -70,7 +68,7 @@ namespace GameLeaderboards.Infrastructure.Migrations
                     b.ToTable("Leaderboards");
                 });
 
-            modelBuilder.Entity("CodemastersLeaderboards.Domain.Models.Platform", b =>
+            modelBuilder.Entity("GameLeaderboards.Domain.Models.Platform", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -86,7 +84,7 @@ namespace GameLeaderboards.Infrastructure.Migrations
                     b.ToTable("Platforms");
                 });
 
-            modelBuilder.Entity("CodemastersLeaderboards.Domain.Models.Race", b =>
+            modelBuilder.Entity("GameLeaderboards.Domain.Models.Race", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -101,7 +99,7 @@ namespace GameLeaderboards.Infrastructure.Migrations
                     b.ToTable("Races");
                 });
 
-            modelBuilder.Entity("CodemastersLeaderboards.Domain.Models.User", b =>
+            modelBuilder.Entity("GameLeaderboards.Domain.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -126,7 +124,7 @@ namespace GameLeaderboards.Infrastructure.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("CodemastersLeaderboards.Domain.Models.Vehicle", b =>
+            modelBuilder.Entity("GameLeaderboards.Domain.Models.Vehicle", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -142,33 +140,33 @@ namespace GameLeaderboards.Infrastructure.Migrations
                     b.ToTable("Vehicles");
                 });
 
-            modelBuilder.Entity("CodemastersLeaderboards.Domain.Models.Leaderboard", b =>
+            modelBuilder.Entity("GameLeaderboards.Domain.Models.Leaderboard", b =>
                 {
-                    b.HasOne("CodemastersLeaderboards.Domain.Models.Country", "Country")
+                    b.HasOne("GameLeaderboards.Domain.Models.Country", "Country")
                         .WithMany("Leaderboards")
                         .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CodemastersLeaderboards.Domain.Models.Platform", "Platform")
+                    b.HasOne("GameLeaderboards.Domain.Models.Platform", "Platform")
                         .WithMany("Leaderboards")
                         .HasForeignKey("PlatformId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CodemastersLeaderboards.Domain.Models.Race", "Race")
+                    b.HasOne("GameLeaderboards.Domain.Models.Race", "Race")
                         .WithMany("Leaderboards")
                         .HasForeignKey("RaceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CodemastersLeaderboards.Domain.Models.User", "User")
+                    b.HasOne("GameLeaderboards.Domain.Models.User", "User")
                         .WithMany("Leaderboards")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CodemastersLeaderboards.Domain.Models.Vehicle", "Vehicle")
+                    b.HasOne("GameLeaderboards.Domain.Models.Vehicle", "Vehicle")
                         .WithMany("Leaderboards")
                         .HasForeignKey("VehicleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -185,27 +183,27 @@ namespace GameLeaderboards.Infrastructure.Migrations
                     b.Navigation("Vehicle");
                 });
 
-            modelBuilder.Entity("CodemastersLeaderboards.Domain.Models.Country", b =>
+            modelBuilder.Entity("GameLeaderboards.Domain.Models.Country", b =>
                 {
                     b.Navigation("Leaderboards");
                 });
 
-            modelBuilder.Entity("CodemastersLeaderboards.Domain.Models.Platform", b =>
+            modelBuilder.Entity("GameLeaderboards.Domain.Models.Platform", b =>
                 {
                     b.Navigation("Leaderboards");
                 });
 
-            modelBuilder.Entity("CodemastersLeaderboards.Domain.Models.Race", b =>
+            modelBuilder.Entity("GameLeaderboards.Domain.Models.Race", b =>
                 {
                     b.Navigation("Leaderboards");
                 });
 
-            modelBuilder.Entity("CodemastersLeaderboards.Domain.Models.User", b =>
+            modelBuilder.Entity("GameLeaderboards.Domain.Models.User", b =>
                 {
                     b.Navigation("Leaderboards");
                 });
 
-            modelBuilder.Entity("CodemastersLeaderboards.Domain.Models.Vehicle", b =>
+            modelBuilder.Entity("GameLeaderboards.Domain.Models.Vehicle", b =>
                 {
                     b.Navigation("Leaderboards");
                 });
