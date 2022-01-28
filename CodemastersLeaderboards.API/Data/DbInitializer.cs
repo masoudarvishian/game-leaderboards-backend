@@ -1,6 +1,6 @@
-﻿using CodemastersLeaderboards.Application.Services.DomainService;
-using CodemastersLeaderboards.Domain.Models;
-using CodemastersLeaderboards.Infrastructure;
+﻿using GameLeaderboards.Application.Services.DomainService;
+using GameLeaderboards.Domain.Models;
+using GameLeaderboards.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,7 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CodemastersLeaderboards.API.Data
+namespace GameLeaderboards.API.Data
 {
     public class DbInitializer
     {

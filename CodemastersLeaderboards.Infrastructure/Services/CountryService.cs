@@ -1,12 +1,12 @@
-﻿using CodemastersLeaderboards.Application.Services;
-using CodemastersLeaderboards.Application.Services.DomainService;
-using CodemastersLeaderboards.Domain.Models;
-using CodemastersLeaderboards.Domain.Models.Dto;
+﻿using GameLeaderboards.Application.Services;
+using GameLeaderboards.Application.Services.DomainService;
+using GameLeaderboards.Domain.Models;
+using GameLeaderboards.Domain.Models.Dto;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CodemastersLeaderboards.Infrastructure.Services
+namespace GameLeaderboards.Infrastructure.Services
 {
     public class CountryService : ICountryService
     {

@@ -1,11 +1,11 @@
-﻿using CodemastersLeaderboards.API.Models;
-using CodemastersLeaderboards.Application.CustomExceptions;
+﻿using GameLeaderboards.API.Models;
+using GameLeaderboards.Application.CustomExceptions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using System.Net;
 
-namespace CodemastersLeaderboards.API.Extensions
+namespace GameLeaderboards.API.Extensions
 {
     public static class ExceptionMiddlewareExtensions
     {

@@ -1,10 +1,10 @@
-﻿using CodemastersLeaderboards.Application.Services.DomainService;
-using CodemastersLeaderboards.Domain.Models;
+﻿using GameLeaderboards.Application.Services.DomainService;
+using GameLeaderboards.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading.Tasks;
 
-namespace CodemastersLeaderboards.Infrastructure.Services.DomainService
+namespace GameLeaderboards.Infrastructure.Services.DomainService
 {
     public class AuthRepository : IAuthRepository
     {

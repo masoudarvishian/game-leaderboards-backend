@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace CodemastersLeaderboards.Application.Services.DomainService
+namespace GameLeaderboards.Application.Services.DomainService
 {
     public interface IGenericRepository<TEntity>
     {

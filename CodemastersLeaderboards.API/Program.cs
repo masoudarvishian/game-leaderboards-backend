@@ -1,5 +1,5 @@
-using CodemastersLeaderboards.API.Data;
-using CodemastersLeaderboards.Infrastructure;
+using GameLeaderboards.API.Data;
+using GameLeaderboards.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
-namespace CodemastersLeaderboards.API
+namespace GameLeaderboards.API
 {
     public class Program
     {

@@ -1,6 +1,6 @@
-﻿using CodemastersLeaderboards.Application.Services.DomainService;
-using CodemastersLeaderboards.Domain.Models;
-using CodemastersLeaderboards.Domain.Models.Dto;
+﻿using GameLeaderboards.Application.Services.DomainService;
+using GameLeaderboards.Domain.Models;
+using GameLeaderboards.Domain.Models.Dto;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,7 +11,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace CodemastersLeaderboards.API.Controllers
+namespace GameLeaderboards.API.Controllers
 {
     [AllowAnonymous]
     [Route("api/auth")]

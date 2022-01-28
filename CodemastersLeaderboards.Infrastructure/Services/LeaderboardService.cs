@@ -1,15 +1,15 @@
-﻿using CodemastersLeaderboards.Application.CustomExceptions;
-using CodemastersLeaderboards.Application.Services;
-using CodemastersLeaderboards.Application.Services.DomainService;
-using CodemastersLeaderboards.Domain.Models;
-using CodemastersLeaderboards.Domain.Models.Dto;
+﻿using GameLeaderboards.Application.CustomExceptions;
+using GameLeaderboards.Application.Services;
+using GameLeaderboards.Application.Services.DomainService;
+using GameLeaderboards.Domain.Models;
+using GameLeaderboards.Domain.Models.Dto;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CodemastersLeaderboards.Infrastructure.Services
+namespace GameLeaderboards.Infrastructure.Services
 {
     public class LeaderboardService : ILeaderboardService
     {

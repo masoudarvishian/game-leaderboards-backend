@@ -1,7 +1,7 @@
-﻿using CodemastersLeaderboards.Domain.Models.Dto;
+﻿using GameLeaderboards.Domain.Models.Dto;
 using System.Collections.Generic;
 
-namespace CodemastersLeaderboards.Application.Services
+namespace GameLeaderboards.Application.Services
 {
     public interface ICountryService
     {

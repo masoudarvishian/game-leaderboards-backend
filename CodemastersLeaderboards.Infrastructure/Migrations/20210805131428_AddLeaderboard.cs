@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CodemastersLeaderboards.Infrastructure.Migrations
+namespace GameLeaderboards.Infrastructure.Migrations
 {
     public partial class AddLeaderboard : Migration
     {

@@ -1,10 +1,10 @@
-﻿using CodemastersLeaderboards.Domain.Models;
+﻿using GameLeaderboards.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace CodemastersLeaderboards.Infrastructure
+namespace GameLeaderboards.Infrastructure
 {
     public class ApplicationContext : DbContext
     {

@@ -1,4 +1,4 @@
-﻿namespace CodemastersLeaderboards.Domain.Models.Dto
+﻿namespace GameLeaderboards.Domain.Models.Dto
 {
     public class CountryDto
     {

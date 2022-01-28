@@ -1,7 +1,7 @@
-﻿using CodemastersLeaderboards.Domain.Models;
+﻿using GameLeaderboards.Domain.Models;
 using System.Threading.Tasks;
 
-namespace CodemastersLeaderboards.Application.Services.DomainService
+namespace GameLeaderboards.Application.Services.DomainService
 {
     public interface IAuthRepository
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CodemastersLeaderboards.Application.CustomExceptions
+namespace GameLeaderboards.Application.CustomExceptions
 {
     public class EntityNotFoundException : Exception
     {

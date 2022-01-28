@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace CodemastersLeaderboards.Application.Services.DomainService
+namespace GameLeaderboards.Application.Services.DomainService
 {
     public interface IUnitOfWork
     {

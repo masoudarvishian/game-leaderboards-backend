@@ -1,11 +1,11 @@
-﻿using CodemastersLeaderboards.Application.Services;
-using CodemastersLeaderboards.Domain.Models.Dto;
+﻿using GameLeaderboards.Application.Services;
+using GameLeaderboards.Domain.Models.Dto;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
-namespace CodemastersLeaderboards.API.Controllers
+namespace GameLeaderboards.API.Controllers
 {
     // we can config this controller so only admin users can see the list of all races, but for simplicity
     // we imagine every logged in user can retrieve the list of races

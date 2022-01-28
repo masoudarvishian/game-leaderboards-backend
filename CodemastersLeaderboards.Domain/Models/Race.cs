@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CodemastersLeaderboards.Domain.Models
+namespace GameLeaderboards.Domain.Models
 {
     public class Race
     {

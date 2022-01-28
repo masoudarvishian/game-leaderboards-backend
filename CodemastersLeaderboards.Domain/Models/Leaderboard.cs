@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CodemastersLeaderboards.Domain.Models
+namespace GameLeaderboards.Domain.Models
 {
     public class Leaderboard
     {

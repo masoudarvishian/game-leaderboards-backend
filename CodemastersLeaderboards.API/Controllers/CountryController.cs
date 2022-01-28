@@ -1,11 +1,11 @@
-﻿using CodemastersLeaderboards.Application.Services;
-using CodemastersLeaderboards.Domain.Models.Dto;
+﻿using GameLeaderboards.Application.Services;
+using GameLeaderboards.Domain.Models.Dto;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
-namespace CodemastersLeaderboards.API.Controllers
+namespace GameLeaderboards.API.Controllers
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]

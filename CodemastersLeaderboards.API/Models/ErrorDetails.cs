@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace CodemastersLeaderboards.API.Models
+namespace GameLeaderboards.API.Models
 {
     public class ErrorDetails
     {

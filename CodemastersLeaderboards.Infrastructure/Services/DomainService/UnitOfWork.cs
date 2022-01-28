@@ -1,8 +1,8 @@
-﻿using CodemastersLeaderboards.Application.Services.DomainService;
+﻿using GameLeaderboards.Application.Services.DomainService;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CodemastersLeaderboards.Infrastructure.Services.DomainService
+namespace GameLeaderboards.Infrastructure.Services.DomainService
 {
     public sealed class UnitOfWork : IUnitOfWork
     {

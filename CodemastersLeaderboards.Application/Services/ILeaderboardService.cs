@@ -1,8 +1,8 @@
-﻿using CodemastersLeaderboards.Domain.Models.Dto;
+﻿using GameLeaderboards.Domain.Models.Dto;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CodemastersLeaderboards.Application.Services
+namespace GameLeaderboards.Application.Services
 {
     public interface ILeaderboardService
     {

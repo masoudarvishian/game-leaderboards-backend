@@ -1,10 +1,10 @@
-﻿using CodemastersLeaderboards.Application.Services.DomainService;
+﻿using GameLeaderboards.Application.Services.DomainService;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace CodemastersLeaderboards.Infrastructure.Services.DomainService
+namespace GameLeaderboards.Infrastructure.Services.DomainService
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity>
         where TEntity : class

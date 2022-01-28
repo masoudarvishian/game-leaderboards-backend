@@ -1,9 +1,9 @@
-using CodemastersLeaderboards.API.Extensions;
-using CodemastersLeaderboards.Application.Services;
-using CodemastersLeaderboards.Application.Services.DomainService;
-using CodemastersLeaderboards.Infrastructure;
-using CodemastersLeaderboards.Infrastructure.Services;
-using CodemastersLeaderboards.Infrastructure.Services.DomainService;
+using GameLeaderboards.API.Extensions;
+using GameLeaderboards.Application.Services;
+using GameLeaderboards.Application.Services.DomainService;
+using GameLeaderboards.Infrastructure;
+using GameLeaderboards.Infrastructure.Services;
+using GameLeaderboards.Infrastructure.Services.DomainService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +14,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 
-namespace CodemastersLeaderboards.API
+namespace GameLeaderboards.API
 {
     public class Startup
     {
@@ -55,7 +55,7 @@ namespace CodemastersLeaderboards.API
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CodemastersLeaderboards.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "GameLeaderboards.API", Version = "v1" });
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     In = ParameterLocation.Header,
@@ -95,7 +95,7 @@ namespace CodemastersLeaderboards.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CodemastersLeaderboards.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GameLeaderboards.API v1"));
             }
             else
             {
